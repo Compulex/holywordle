@@ -1,4 +1,12 @@
 <h1>Holy Wordle</h1>
+
+<select (change)="select($event)">
+  <option>Select Category</option>
+  <option *ngFor="let category of categoriesList">{{category}}</option>
+</select>
 <div style="border: solid 1px black">
-  <app-guess-list></app-guess-list>
+  <ol *ngFor="let guess of guesses">
+    <li><app-guess [guess]="guess" [answer]="chosenWord.name"></app-guess></li>
+  </ol>
+  <button (change)="checkInput()">Check</button>
 </div>

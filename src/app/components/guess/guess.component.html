@@ -1,1 +1,3 @@
-<p>guess works!</p>
+<span *ngFor="let l of word">
+    <input (keyup)="addToGuess($event)" type="text" maxlength="1" name={{l}}>
+</span>
